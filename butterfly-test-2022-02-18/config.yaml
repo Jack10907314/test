@@ -1,0 +1,64 @@
+    # Project definitions (do not edit)
+Task: butterfly
+scorer: test
+date: Feb18
+multianimalproject: true
+identity: false
+
+    # Project path (change when moving around)
+project_path: /home/user/Desktop/all/butterfly-test-2022-02-18
+
+    # Annotation data set configuration (and individual video cropping parameters)
+video_sets:
+  /home/user/Desktop/all/butterfly-test-2022-02-18/videos/video.mp4:
+    crop: 0, 1440, 0, 1080
+individuals:
+- individual1
+uniquebodyparts: []
+multianimalbodyparts:
+- head
+- leftwing
+- rightwing
+- base
+skeleton:
+- - base
+  - head
+- - base
+  - leftwing
+- - base
+  - rightwing
+bodyparts: MULTI!
+start: 0
+stop: 1
+numframes2pick: 20
+
+    # Plotting configuration
+skeleton_color: black
+pcutoff: 0.6
+dotsize: 12
+alphavalue: 0.7
+colormap: rainbow
+
+    # Training,Evaluation and Analysis configuration
+TrainingFraction:
+- 0.95
+iteration: 0
+default_net_type: dlcrnet_ms5
+default_augmenter: multi-animal-imgaug
+default_track_method: ellipse
+snapshotindex: -1
+batch_size: 8
+
+    # Cropping Parameters (for analysis and outlier frame detection)
+cropping: false
+    #if cropping is true for analysis, then set the values here:
+x1: 0
+x2: 640
+y1: 277
+y2: 624
+
+    # Refinement configuration (parameters from annotation dataset configuration also relevant in this stage)
+corner2move2:
+- 50
+- 50
+move2corner: true
